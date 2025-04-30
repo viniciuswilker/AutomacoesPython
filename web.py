@@ -1,17 +1,16 @@
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.chrome.options import Options
+import webbrowser
+import pyautogui as pg
+from time import sleep
+import pyperclip
 
-class CursoAutomacao():
-    def __init__(self):
-        service = Service(executable_path='./chromedriver.exe')
-        options = Options()
-        options.add_argument('--lang=pt-BR')
+webbrowser.open('https://cursoautomacao.netlify.app')
+sleep(3)
 
-        self.driver = webdriver.Chrome(service=service, options=options)
+pg.moveTo(1656,777, 1.5)
+pg.click()
+sleep(1)
 
-    def Iniciar(self):
-        print('seu codigo aqui')
+pyperclip.copy('AAAAA TESTANDOOOOO0')
+pg.hotkey('ctrl' , 'v')
 
-curso = CursoAutomacao()
-curso.Iniciar()
+
